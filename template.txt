@@ -1,0 +1,11 @@
+token=
+crop_farm=true
+crypto_farm=true
+mine_farm=true
+coin=dogecoin
+crop=corn
+mineral=gold
+
+# this is the config file to set up put your chosen crops/coin/mineral in and turn on and off the modules as you need
+# replace token with your discord token (search up on youtube on how to get)
+# once configured, rename this file to just .env
