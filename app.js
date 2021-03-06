@@ -15,11 +15,17 @@ const options = {
         crop: "gold"
     },
 }
+
+var auto_sell = {
+    online: true,
+    cooldown: "1800000"
+}
+
 console.log(`Auto Farm started! Config:\n`)
 for (const [index,val] of Object.entries(options)) {
     console.log(index,val)
 }
-
+console.log("auto_sell",auto_sell)
 function cooldown(data){
     const cooldown = data == "copper" ? "130000" : data == "iron" ? "250000": data == "gold" ? "490000": data == "cotton" ? "25000": data == "wheat" ? "40000": data == "corn" ? "70000": data == "dogecoin"? "3850000": data == "litecoin"? "970000":data == "bitcoin"? "1930000":"n/a"
     return cooldown
@@ -48,4 +54,11 @@ for (const [index,val] of Object.entries(options)) {
             console.log(`${val.crop} collected! `)
         }, cooldown(val.crop))
     }
+}
+
+if(auto_sell.online){
+    setInterval(() => {
+        sendMessage(";s")
+        console.log("Auto Sold!")
+    }, auto_sell.cooldown);
 }
