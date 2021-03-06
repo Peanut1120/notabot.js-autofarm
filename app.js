@@ -1,4 +1,4 @@
-const token = 'mfa._ATKfiayDalbbzrBq6Y56Cst-YH1LOcEeWfn3XPdvI6ET2brFSHuMgIP24Lq8YAaad7BE1IC5MojlTKWsrmU'
+const token = 'token_here'
 
 const fetch = require("node-fetch");
 const options = {
