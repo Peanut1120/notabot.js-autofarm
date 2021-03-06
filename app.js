@@ -1,4 +1,4 @@
-const token = 'token_here'
+const token = 'mfa.0mSEV4mRmE9PEHFNU2rETSNxtv5BKu3JhuMYx-1reRIMjfxHVpfdRYOw9VOWgAfw3a4NTzRChnx8Ucea9gdp'
 
 const fetch = require("node-fetch");
 const options = {
@@ -15,13 +15,18 @@ const options = {
         crop: "gold"
     },
 }
-
 var auto_sell = {
     online: true,
-    cooldown: "1800000"
+    cooldown: "600000"
 }
 
-console.log(`Auto Farm started! Config:\n`)
+function log(data) {
+    var date = new Date();
+    var current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    return console.log(`[${current_time}] ${data}`)
+}
+
+log(`Auto Farm started! Config:\n`)
 for (const [index,val] of Object.entries(options)) {
     console.log(index,val)
 }
@@ -51,14 +56,14 @@ for (const [index,val] of Object.entries(options)) {
         const message = val.crop == "corn" ? "pick" : val.crop == "dogecoin" ? "process" : val.crop == "gold" ? "mine" : "lol"
         setInterval(() => {
             sendMessage(`;${message} ${val.crop}`);
-            console.log(`${val.crop} collected! `)
+            log(`${val.crop} collected! `)
         }, cooldown(val.crop))
     }
 }
 
 if(auto_sell.online){
     setInterval(() => {
-        sendMessage(";s")
-        console.log("Auto Sold!")
+        sendMessage(";s");
+        log("Auto Sold!")
     }, auto_sell.cooldown);
 }
