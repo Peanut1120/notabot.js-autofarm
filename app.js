@@ -65,5 +65,8 @@ if(auto_sell.online){
     setInterval(() => {
         sendMessage(";s");
         log("Auto Sold!")
+        setTimeout(() => {
+            sendMessage(";workers buy gold max")
+        }, 3000);
     }, auto_sell.cooldown);
 }
