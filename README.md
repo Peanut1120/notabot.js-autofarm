@@ -24,6 +24,4 @@ In the `options` object you can customise what you want to farm.
 
 To turn a module on / off change the farming entry to true / false, to change the item you want to farm change the entry crop to your choice (e.g. gold, iron, copper)
 
-We recomend that you turn off crop auto farm as it looks really suspicious.
-
-Made by fate and peanut
+I recomend that you turn off crop auto farm as it looks really suspicious.
